@@ -41,15 +41,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public void onBindViewHolder(@NonNull RecyclerAdapter.ViewHolder holder, int position) {
         holder.textViewName.setText("Name: " + personList.get(position).getName());
         holder.textViewAddress.setText("Address: " +
-                personList.get(position).getStreet() + ", " +
-                personList.get(position).getSuite() + ", " +
-                personList.get(position).getCity());
+                personList.get(position).getAddress().getStreet() + ", " +
+                personList.get(position).getAddress().getSuite() + ", " +
+                personList.get(position).getAddress().getCity());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { // this runs when the user clicks on an item in the RecyclerView
                 //Toast.makeText(context,"Clicked on " + personList.get(position).getName(),Toast.LENGTH_SHORT).show();
                 Intent postsIntent = new Intent(context, PostsActivity.class);
                 Bundle b = new Bundle();
+                //TODO: make this bundle pass int id or a parcelable object of Person
                 b.putString("name", personList.get(position).getName());
                 postsIntent.putExtras(b);
                 context.startActivity(postsIntent);

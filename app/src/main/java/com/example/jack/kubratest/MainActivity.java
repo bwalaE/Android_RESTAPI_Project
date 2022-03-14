@@ -53,10 +53,15 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         JSONObject personObject = response.getJSONObject(i);
                         Person person = new Person();
+                        Address address = new Address();
                         person.setName(personObject.getString("name").toString());
-                        person.setStreet(personObject.getJSONObject("address").getString("street").toString());
-                        person.setSuite(personObject.getJSONObject("address").getString("suite").toString());
-                        person.setCity(personObject.getJSONObject("address").getString("city").toString());
+                        //person.getAddress().setStreet(personObject.getJSONObject("address").getString("street").toString());
+                        //person.getAddress().setSuite(personObject.getJSONObject("address").getString("suite").toString());
+                        //person.getAddress().setCity(personObject.getJSONObject("address").getString("city").toString());
+                        address.setStreet(personObject.getJSONObject("address").getString("street").toString());
+                        address.setSuite(personObject.getJSONObject("address").getString("suite").toString());
+                        address.setCity(personObject.getJSONObject("address").getString("city").toString());
+                        person.setAddress(address);
                         personList.add(person);
                     } catch (JSONException e) {
                         e.printStackTrace();

@@ -1,18 +1,25 @@
 package com.example.jack.kubratest;
 
 public class Person {
+
     private String name;
-    private String street;
-    private String suite;
-    private String city;
-    //private String address;
+    private String username;
+    private String email;
+    private Address address;
+    private String phone; // should be fine to keep this as a String for now at least
+    private String website;
+    private Company company;
 
     public Person() { }
-    public Person(String name, String street, String suite, String city) {
+
+    public Person(String name, String username, String email, Address address, String phone, String website, Company company) {
         this.name = name;
-        this.street = street;
-        this.suite = suite;
-        this.city = city;
+        this.username = username;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
+        this.website = website;
+        this.company = company;
     }
 
     public String getName() {
@@ -23,27 +30,27 @@ public class Person {
         this.name = name;
     }
 
-    public String getStreet() {
-        return street;
-    }
+    public String getUsername() { return username; }
 
-    public void setStreet(String street) {
-        this.street = street;
-    }
+    public void setUsername(String username) { this.username = username; }
 
-    public String getSuite() {
-        return suite;
-    }
+    public String getEmail() { return email; }
 
-    public void setSuite(String suite) {
-        this.suite = suite;
-    }
+    public void setEmail(String email) { this.email = email; }
 
-    public String getCity() {
-        return city;
-    }
+    public Address getAddress() { return address; }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+    public void setAddress(Address address) { this.address = address; }
+
+    public String getPhone() { return phone; }
+
+    public void setPhone(String phone) { this.phone = phone; }
+
+    public String getWebsite() { return website; }
+
+    public void setWebsite(String website) { this.website = website; }
+
+    public Company getCompany() { return company; }
+
+    public void setCompany(Company company) { this.company = company; }
 }

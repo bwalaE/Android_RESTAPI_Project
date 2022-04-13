@@ -51,6 +51,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 Intent postsIntent = new Intent(context, PostsActivity.class);
                 Bundle b = new Bundle();
                 //TODO: make this bundle pass int id or a parcelable object of Person
+                //b.putString("name", personList.get(position).getName());
+                b.putInt("id", position+1); // if it's not +1 it displays the correct name but the posts of the previous user in the list
                 b.putString("name", personList.get(position).getName());
                 postsIntent.putExtras(b);
                 context.startActivity(postsIntent);

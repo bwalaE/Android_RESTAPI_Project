@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         personList = new ArrayList<>();
 
         extractUsers();
-
     }
 
     private void extractUsers() {
